@@ -13,9 +13,10 @@
   function mb(b){return Math.round(b/1e6)}
   function paint(){
     if(stage){T.textContent=stage;F.style.width="100%";box.classList.add("lsPS");return}
+    // chunks download in parallel and can finish out of order: name the first one the game is still waiting for
     var cur=X.length-1;for(var i=0;i<X.length;i++)if(!done[X[i][0]]){cur=i;break}
     var p=bytes/tot;F.style.width=(p*100).toFixed(1)+"%";
-    T.textContent="Loading "+X[cur][2]+": chunk "+(cur+1)+"/"+X.length+" \u00b7 "+Math.floor(p*100)+"% \u00b7 "+mb(bytes)+"/"+mb(tot)+" MB";
+    T.textContent="Loading "+X[cur][2]+": chunk "+Math.min(nDone+1,X.length)+"/"+X.length+" \u00b7 "+Math.floor(p*100)+"% \u00b7 "+mb(bytes)+"/"+mb(tot)+" MB";
   }
   function seen(name){var j=name.indexOf("assets/data/");if(j<0)return;var k=name.slice(j).split(/[?#]/)[0];
     if(k in size&&!done[k]){done[k]=1;nDone++;bytes+=size[k]}}
