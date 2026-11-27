@@ -2366,7 +2366,7 @@ function padTab(){let card=document.getElementById("optCard"),tabs=card?.querySe
   <label class="row">Vibration <input type="checkbox" id="padVib"></label>
   <label class="row">Vibration strength <span class="val" id="vPadVibS"></span><input type="range" id="padVibS" min="0.2" max="2.5" step="0.1"></label>
   <button class="btn small" id="padReset" style="width:auto;padding:.3em 1em">Reset to defaults</button>
-  <div class="muted" style="font-size:13px;line-height:1.55;margin-top:10px"><b>In game:</b> Left stick move \xB7 Right stick look \xB7 RT fire \xB7 LT aim (scoped guns) \xB7 A jump \xB7 B crouch \xB7 X reload \xB7 Y grenade \xB7 LB/RB switch weapon \xB7 D-pad ← previous weapon \xB7 D-pad ↑ / → / ↓ gadgets 1 / 2 / 3 \xB7 L3 sprint \xB7 R3 melee \xB7 View/Back scoreboard \xB7 Start pause<br><b>Menus:</b> left stick or D-pad move \xB7 A select \xB7 B back \xB7 right stick scroll</div>`;
+  <div class="muted" style="font-size:13px;line-height:1.55;margin-top:10px"><b>In game:</b> Left stick move \xB7 Right stick look \xB7 RT fire \xB7 LT aim \xB7 A jump \xB7 B crouch \xB7 X reload \xB7 Y grenade \xB7 LB/RB switch weapon \xB7 D-pad ← previous weapon \xB7 D-pad ↑ / → / ↓ gadgets 1 / 2 / 3 \xB7 L3 sprint \xB7 R3 melee \xB7 View/Back scoreboard \xB7 Start pause<br><b>Menus:</b> left stick or D-pad move \xB7 A select \xB7 B back \xB7 right stick scroll</div>`;
  ([...card.querySelectorAll(".tab")].pop()||tabs).after(d);
  let $=id=>d.querySelector("#"+id),sync=()=>{$("padSens").value=PS.sens,$("vPadSens").textContent=(+PS.sens).toFixed(2)+"x",$("padAds").value=PS.adsSens??1,$("vPadAds").textContent=(+(PS.adsSens??1)).toFixed(2)+"x",$("padInv").checked=!!PS.inv,$("padAssist").value=PS.assist,$("padDz").value=PS.dz,$("vPadDz").textContent=Math.round(PS.dz*100)+"%",$("padVib").checked=!!PS.vib,$("padVibS").value=PS.vibS??1.6,$("vPadVibS").textContent=Math.round((PS.vibS??1.6)*100)+"%"},
   save=()=>{PS.sens=+$("padSens").value,PS.adsSens=+$("padAds").value,PS.inv=$("padInv").checked?1:0,PS.assist=$("padAssist").value,PS.dz=+$("padDz").value,PS.vib=$("padVib").checked?1:0,PS.vibS=+$("padVibS").value,RA.set("padset",PS),sync()};
@@ -5872,4 +5872,3 @@ if(!g.c){let y=Math.min(r.muzzle.y-g.by*e.y*s,t.min.y+.15*T.y);mesh.position.set
 g.off&&mesh.position.add(new c(...g.off));
 mesh.scale.setScalar(s),r.group.clear(),r.mag=new IA,r.mag.userData.home=new c,r.group.add(r.mag,mesh);return r}}
 
-})();
