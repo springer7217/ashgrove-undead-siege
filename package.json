@@ -1,0 +1,14 @@
+{
+  "name": "ashgrove-undead-siege",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ashgrove: Undead Siege by Evan - multiplayer zombie survival FPS for the browser",
+  "author": "Evan",
+  "scripts": {
+    "build": "node tools/assemble.mjs",
+    "start": "node tools/assemble.mjs && npx serve public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
