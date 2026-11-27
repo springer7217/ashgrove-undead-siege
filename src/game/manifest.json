@@ -1,35 +1,24 @@
 {
  "parts": [
   "src/game/game-01.js",
-  "src/game/game-02.js",
-  "src/game/game-03.js"
+  "src/game/game-02.js"
  ],
  "game_script_sha256": "d3bee5c9fe3925b492751675888411bbb57f81bfc3de13844d9c9064de638013",
  "index_html_sha256": "dc877d730c4bf2de6a559459a9c9c30fb81ab24f0339348aab12ad06e8691d54",
  "detail": [
   {
    "file": "src/game/game-01.js",
-   "first_line": 1,
-   "last_line": 4901,
-   "bytes": 5975471,
+   "byte_start": 0,
+   "bytes": 4900000,
    "contains_protection": false,
    "contains_modified_file_hash": false
   },
   {
    "file": "src/game/game-02.js",
-   "first_line": 4902,
-   "last_line": 8619,
-   "bytes": 2504017,
-   "contains_protection": false,
-   "contains_modified_file_hash": true
-  },
-  {
-   "file": "src/game/game-03.js",
-   "first_line": 8620,
-   "last_line": 10776,
-   "bytes": 453959,
+   "byte_start": 4900000,
+   "bytes": 4033447,
    "contains_protection": true,
-   "contains_modified_file_hash": false
+   "contains_modified_file_hash": true
   }
  ]
 }
