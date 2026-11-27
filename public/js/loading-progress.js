@@ -5,21 +5,21 @@
    expects exactly two large inline scripts on the page. */
 (function(){
   var X=window.__ASGIDX||[],L=document.getElementById("loading");if(!L||!X.length||!window.performance)return;
-  var tot=0,size={},done={},nDone=0,bytes=0,stage="",rank=0;
-  for(var i=0;i<X.length;i++){tot+=X[i][1];size[X[i][0]]=X[i][1]}
+  var tot=0,size={},idx={},done={},nDone=0,bytes=0,stage="",rank=0,last=0;
+  for(var i=0;i<X.length;i++){tot+=X[i][1];size[X[i][0]]=X[i][1];idx[X[i][0]]=i}
   var box=document.createElement("div");box.className="lsP";
   box.innerHTML='<div class="lsPT">Loading game data...</div><div class="lsPB"><i></i></div>';L.appendChild(box);
   var T=box.firstChild,F=box.lastChild.firstChild,lsL=L.querySelector(".lsL");lsL&&(lsL.style.visibility="hidden");
   function mb(b){return Math.round(b/1e6)}
   function paint(){
     if(stage){T.textContent=stage;F.style.width="100%";box.classList.add("lsPS");return}
-    // chunks download in parallel and can finish out of order: name the first one the game is still waiting for
-    var cur=X.length-1;for(var i=0;i<X.length;i++)if(!done[X[i][0]]){cur=i;break}
+    // chunks download in parallel and finish out of order: the text names what the latest finished chunk held
+    var cur=last;
     var p=bytes/tot;F.style.width=(p*100).toFixed(1)+"%";
     T.textContent="Loading "+X[cur][2]+": chunk "+Math.min(nDone+1,X.length)+"/"+X.length+" \u00b7 "+Math.floor(p*100)+"% \u00b7 "+mb(bytes)+"/"+mb(tot)+" MB";
   }
   function seen(name){var j=name.indexOf("assets/data/");if(j<0)return;var k=name.slice(j).split(/[?#]/)[0];
-    if(k in size&&!done[k]){done[k]=1;nDone++;bytes+=size[k]}}
+    if(k in size&&!done[k]){done[k]=1;nDone++;bytes+=size[k];last=idx[k]}}
   function scan(list){for(var i=0;i<list.length;i++)list[i].responseEnd>0&&seen(list[i].name);
     nDone===X.length&&go(1,"Unpacking game data...");paint()}
   // start-up stages only move forward (the game can finish starting before DOMContentLoaded fires)
