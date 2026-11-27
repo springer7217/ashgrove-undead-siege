@@ -34,12 +34,12 @@ public/                    static site served by Vercel (output directory)
   assets/manifest.json     list of every data entry and its type
 src/
   index.template.html      page markup, with a marker where the game script goes
-  game/game-01.js ...      the game script, in order (01 engine and maps, 02 gameplay and UI, 03 later systems including the anti-cheat)
+  game/game-01.js ...      the game script, in order (01 engine and maps, 02 gameplay, UI and the anti-cheat, kept together in one file)
   game/manifest.json       part order and checksums of the release build
   binary/loading-art.json  loading-screen JPEGs stored as base64 text, decoded into public/ by the build
 tools/
   assemble.mjs             joins src/ into public/index.html and decodes src/binary/ into public/
-  build.py, ast_edits.js, split.py   one-time pipeline that produced this layout from the original file
+  build.py, ast_edits.js, split.py, rechunk.py   one-time pipeline that produced this layout from the original file
 ```
 
 ### Why the game script is still one inline script
