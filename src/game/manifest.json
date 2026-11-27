@@ -1,0 +1,24 @@
+{
+ "parts": [
+  "src/game/game-01.js",
+  "src/game/game-02.js"
+ ],
+ "game_script_sha256": "d3bee5c9fe3925b492751675888411bbb57f81bfc3de13844d9c9064de638013",
+ "index_html_sha256": "2e3bd535f55f6023107211e078671368e51b1ac668ba410ebb945567e71b36f1",
+ "detail": [
+  {
+   "file": "src/game/game-01.js",
+   "byte_start": 0,
+   "bytes": 4900000,
+   "contains_protection": false,
+   "contains_modified_file_hash": false
+  },
+  {
+   "file": "src/game/game-02.js",
+   "byte_start": 4900000,
+   "bytes": 4033447,
+   "contains_protection": true,
+   "contains_modified_file_hash": true
+  }
+ ]
+}
