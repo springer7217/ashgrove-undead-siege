@@ -4,8 +4,8 @@
   "src/game/game-02.js",
   "src/game/game-03.js"
  ],
- "game_script_sha256": "864ceeffec6f44a0fbe48eff28bc6050d986fc7db18fa47b21403cd895312bb6",
- "index_html_sha256": "356f9a4ab3d0b4703f84cc0b27ded3cc12111a7904c18fee6667103bf88cbb8e",
+ "game_script_sha256": "91dd94fcde56e5cc7882f2399abb549dd4c76f49e8063582106eea24ea5c62b1",
+ "index_html_sha256": "b3766728c6a3a1bc0912fa8c3c001b1ac0deb54f2321bb75294436259b92f46a",
  "detail": [
   {
    "file": "src/game/game-01.js",
@@ -19,7 +19,7 @@
   },
   {
    "file": "src/game/game-03.js",
-   "bytes": 3298,
+   "bytes": 3794,
    "note": "r134 improvements (aim down sights with every gun, released mouse buttons on focus loss); closes the script"
   }
  ]
